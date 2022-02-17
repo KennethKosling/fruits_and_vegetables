@@ -8,9 +8,9 @@ class Index extends React.Component{
                 <h1>This is the Index Page for My Delicious Fruit</h1>
                 <ul>
                 {
-                    fruits.map((fruit, i) => {
+                    fruits.map((fruit) => {
                         return (
-                            <li><a href={`/fruits/${i}`}>{fruit.name}</a></li>
+                            <li key={`${fruit._id}`}><a href={`/fruits/${fruit._id}`}>{fruit.name}</a></li>
                         )
                     })
                 }
