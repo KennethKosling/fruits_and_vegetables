@@ -1,5 +1,4 @@
 const React = require('react');
-const fruits = require('../../models/fruits');
 
 class Show extends React.Component {
     render(){
@@ -10,6 +9,9 @@ class Show extends React.Component {
                 <a href="/vegetables">Go back to the Index</a>
                 <p>This vegetable is {vegetable.color}</p>
                 <p>{vegetable.readyToEat? 'It is ready to eat' : 'It is not ready to eat'}</p>
+                <form action={`/vegetables/${vegetable._id}/edit`} method='GET'>
+                    <input type='submit' value={`Edit ${vegetable.name}`} />
+                </form>
             </div>
         )
     }
